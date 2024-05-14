@@ -2,10 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from'./routes/user.route.js';
-import authRouter from './routes/auth.route.js'
+import authRouter from './routes/auth.route.js';
+import cookieParser from "cookie-parser";//to extract information from cookie
 dotenv.config();
 const app = express();
 app.use((express.json()));
+app.use(cookieParser());
 mongoose
   .connect(process.env.MONGO)
   .then(() => {
@@ -22,6 +24,7 @@ app.listen(3000, () => {
 //routes
 app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
+
 
 
 //middleware to handle errors

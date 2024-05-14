@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useRef } from "react";
+import { useRef } from "react";//The useRef hook in React is like a way to save a special bookmark or pointer to something. This bookmark doesn't change even when your component updates.
 import { app } from "../firebase";
 import {
   getDownloadURL,
