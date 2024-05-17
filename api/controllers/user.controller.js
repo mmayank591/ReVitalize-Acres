@@ -26,7 +26,7 @@ export const updateUser = async (req, res, next) => {
       { new: true }
     ); //new:true   save the updated user with the new information
 
-    const { password, ...rest } = updatedUser._doc;
+    const { password, ...rest } = updatedUser._doc;//updatedUser._doc is a way to get just the basic data from the updated user
     res.status(200).json(rest);
   } catch (error) {
     next(error);
