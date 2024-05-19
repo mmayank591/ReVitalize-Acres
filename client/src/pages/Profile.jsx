@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useRef } from "react"; //The useRef hook in React is like a way to save a special bookmark or pointer to something. This bookmark doesn't change even when your component updates.
+import { Link } from "react-router-dom";
 import { app } from "../firebase";
 import {
   getDownloadURL,
@@ -176,6 +177,12 @@ export default function Profile() {
         >
           {loading ? "Loading..." : "Update"}
         </button>
+        <Link
+          className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+          to={"/create-listing"}
+        >
+          Create Listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span
